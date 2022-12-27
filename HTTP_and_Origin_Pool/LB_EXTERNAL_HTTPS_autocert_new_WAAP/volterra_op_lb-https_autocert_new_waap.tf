@@ -4,12 +4,12 @@
 resource "volterra_origin_pool" "op-ip-internal" {
   name                   = "op-ip-internal"
   //Name of the namespace where the origin pool must be deployed
-  namespace              = "VOLTERRA_NS"
+  namespace              = "a-arquint"
  
    origin_servers {
 
     public_name {
-      dns_name = "APP_FQDN"
+      dns_name = "sentence.emea.f5se.com"
     }
 
     labels = {
@@ -26,8 +26,8 @@ resource "volterra_origin_pool" "op-ip-internal" {
 
 //Definition of the WAAP Policy
 resource "volterra_app_firewall" "waap-tf" {
-  name      = "WAAP_POLICY_TO_CREATE"
-  namespace = "VOLTERRA_NS"
+  name      = "waap-demo-tf-ara"
+  namespace = "a-arquint"
 
   // One of the arguments from this list "allow_all_response_codes allowed_response_codes" must be set
   allow_all_response_codes = true
@@ -53,10 +53,10 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
   //Mandatory "Metadata"
   name      = "lb-https-tf"
   //Name of the namespace where the origin pool must be deployed
-  namespace = "VOLTERRA_NS"
+  namespace = "a-arquint"
   //End of mandatory "Metadata" 
   //Mandatory "Basic configuration" with Auto-Cert 
-  domains = ["mypublic.appfqdn.com"]
+  domains = ["arawaap.emea-ent.f5demos.com"]
   https_auto_cert {
     add_hsts = true
     http_redirect = true
@@ -69,7 +69,7 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
   default_route_pools {
       pool {
         name = "op-ip-internal"
-        namespace = "VOLTERRA_NS"
+        namespace = "a-arquint"
       }
       weight = 1
     }
@@ -82,8 +82,8 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
   disable_rate_limit = true
   //WAAP Policy reference, created earlier in this plan - refer to the same name
   app_firewall {
-    name = "WAAP_POLICY_TO_CREATE"
-    namespace = "VOLTERRA_NS"
+    name = "waap-demo-tf-ara"
+    namespace = "a-arquint"
   }
   multi_lb_app = true
   user_id_client_ip = true
