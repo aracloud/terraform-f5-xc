@@ -13,14 +13,19 @@
 //  default = "https://f5-emea-ent.console.ves.volterra.io/api"
 //}
 
+variable "xc_namespace" {
+  type = string
+  default = "a-arquint"
+}
+
 variable "xc_origin_pool" {
   type = string
   default = "op-ip-internal"
 }
 
-variable "xc_namespace" {
+variable "xc_loadbalancer" {
   type = string
-  default = "a-arquint"
+  default = "lb-https-tf-ara"
 }
 
 variable "xc_pub_app" {
