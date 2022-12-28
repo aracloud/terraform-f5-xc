@@ -1,15 +1,15 @@
 //==========================================================================
 //Definition of the Origin, 1-origin.tf
 //Start of the TF file
-resource "volterra_origin_pool" "op-ip-internal" {
-  name                   = "op-ip-internal"
+resource "volterra_origin_pool" "xc_origin_pool" {
+  name                   = var.xc_origin_pool
   //Name of the namespace where the origin pool must be deployed
-  namespace              = "a-arquint"
+  namespace              = var.xc_namespace
  
    origin_servers {
 
     public_name {
-      dns_name = "sentence.emea.f5se.com"
+      dns_name = var.xc_pub_app
     }
 
     labels = {
@@ -26,8 +26,8 @@ resource "volterra_origin_pool" "op-ip-internal" {
 
 //Definition of the WAAP Policy
 resource "volterra_app_firewall" "waap-tf" {
-  name      = "waap-demo-tf-ara"
-  namespace = "a-arquint"
+  name      = var.xc_wafpol_name
+  namespace = var.xc_namespace
 
   // One of the arguments from this list "allow_all_response_codes allowed_response_codes" must be set
   allow_all_response_codes = true
@@ -49,14 +49,14 @@ resource "volterra_app_firewall" "waap-tf" {
 //Definition of the Load-Balancer, 2-https-lb.tf
 //Start of the TF file
 resource "volterra_http_loadbalancer" "lb-https-tf" {
-  depends_on = [volterra_origin_pool.op-ip-internal]
+  depends_on = [volterra_origin_pool.xc_origin_pool]
   //Mandatory "Metadata"
   name      = "lb-https-tf"
   //Name of the namespace where the origin pool must be deployed
-  namespace = "a-arquint"
+  namespace = var.xc_namespace
   //End of mandatory "Metadata" 
   //Mandatory "Basic configuration" with Auto-Cert 
-  domains = ["arawaap.emea-ent.f5demos.com"]
+  domains = [var.xc_fqdn_app]
   https_auto_cert {
     add_hsts = true
     http_redirect = true
@@ -68,8 +68,8 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
   }
   default_route_pools {
       pool {
-        name = "op-ip-internal"
-        namespace = "a-arquint"
+        name = var.xc_origin_pool
+        namespace = var.xc_namespace
       }
       weight = 1
     }
@@ -82,8 +82,8 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
   disable_rate_limit = true
   //WAAP Policy reference, created earlier in this plan - refer to the same name
   app_firewall {
-    name = "waap-demo-tf-ara"
-    namespace = "a-arquint"
+    name = var.xc_wafpol_name
+    namespace = var.xc_namespace
   }
   multi_lb_app = true
   user_id_client_ip = true
