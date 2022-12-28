@@ -4,3 +4,6 @@ _build/
 docs/errors.txt
 .DS_Store
 .vscode
+.terraform*
+.terraform/
+HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_new_WAAP/.terraform/
