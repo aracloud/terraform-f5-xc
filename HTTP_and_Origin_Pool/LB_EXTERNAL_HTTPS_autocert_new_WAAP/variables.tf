@@ -35,8 +35,8 @@ variable "xc_loadbalancer" {
 // backend application
 variable "xc_pub_app" {
   type = string
-  // default = "sentence.emea.f5se.com"
-  default = "app.ndee.me"
+  default = "sentence.emea.f5se.com"
+  //default = "app.ndee.me"
 }
 
 variable "xc_pub_app_port" {
