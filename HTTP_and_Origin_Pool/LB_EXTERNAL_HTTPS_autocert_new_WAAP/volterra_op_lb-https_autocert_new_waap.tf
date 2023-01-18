@@ -16,8 +16,9 @@ resource "volterra_origin_pool" "xc_origin_pool" {
     }
   }
 
-  no_tls = true
-  port = "80"
+  no_tls = var.xc_pub_app_ssl
+  port = var.xc_pub_app_port
+
   endpoint_selection     = "LOCALPREFERED"
   loadbalancer_algorithm = "LB_OVERRIDE"
 }

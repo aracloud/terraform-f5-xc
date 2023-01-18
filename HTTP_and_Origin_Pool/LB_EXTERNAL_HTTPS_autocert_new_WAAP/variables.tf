@@ -35,7 +35,18 @@ variable "xc_loadbalancer" {
 // backend application
 variable "xc_pub_app" {
   type = string
-  default = "sentence.emea.f5se.com"
+  // default = "sentence.emea.f5se.com"
+  default = "app.ndee.me"
+}
+
+variable "xc_pub_app_port" {
+  type = string
+  default = "80"
+}
+
+variable "xc_pub_app_ssl" {
+  type = string
+  default = "true"
 }
 
 // waf policy 
