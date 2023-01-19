@@ -35,8 +35,8 @@ variable "xc_loadbalancer" {
 // backend application
 variable "xc_pub_app" {
   type = string
-  default = "sentence.emea.f5se.com"
-  //default = "app.ndee.me"
+  //default = "sentence.emea.f5se.com"
+  default = "app.ndee.me"
 }
 
 variable "xc_pub_app_port" {
@@ -44,7 +44,7 @@ variable "xc_pub_app_port" {
   default = "80"
 }
 
-variable "xc_pub_app_ssl" {
+variable "xc_pub_app_no_tls" {
   type = string
   default = "true"
 }
@@ -58,5 +58,5 @@ variable "xc_wafpol_name" {
 // application full qualified domain name
 variable "xc_fqdn_app" {
   type = string
-  default = "arawaap.emea-ent.f5demos.com"
+  default = "araweb.emea-ent.f5demos.com"
 }
