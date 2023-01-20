@@ -1,23 +1,24 @@
 //==========================================================================
 //Definition of the Origin, 1-origin.tf
 //Start of the TF file
-resource "volterra_origin_pool" "op-public-fqdn" {
-  name                   = "op-public-fqdn"
+resource "volterra_origin_pool" "xc_origin_pool" {
+  name                   = var.xc_origin_pool
   //Name of the namespace where the origin pool must be deployed
-  namespace              = "VOLTERRA_NS"
+  namespace              = var.xc_namespace
  
    origin_servers {
 
     public_name {
-      dns_name = "APP_FQDN"
+      dns_name = var.xc_pub_app
     }
 
     labels = {
     }
   }
 
-  no_tls = true
-  port = "80"
+  no_tls = var.xc_pub_app_no_tls
+  port = var.xc_pub_app_port
+
   endpoint_selection     = "LOCALPREFERED"
   loadbalancer_algorithm = "LB_OVERRIDE"
 }
@@ -26,8 +27,8 @@ resource "volterra_origin_pool" "op-public-fqdn" {
 
 //Definition of the WAAP Policy
 resource "volterra_app_firewall" "waap-tf" {
-  name      = "WAAP_POLICY_TO_CREATE"
-  namespace = "VOLTERRA_NS"
+  name      = var.xc_wafpol_name
+  namespace = var.xc_namespace
 
   // One of the arguments from this list "allow_all_response_codes allowed_response_codes" must be set
   allow_all_response_codes = true
@@ -49,14 +50,14 @@ resource "volterra_app_firewall" "waap-tf" {
 //Definition of the Load-Balancer, 2-https-lb.tf
 //Start of the TF file
 resource "volterra_http_loadbalancer" "lb-https-tf" {
-  depends_on = [volterra_origin_pool.op-public-fqdn]
+  depends_on = [volterra_origin_pool.xc_origin_pool]
   //Mandatory "Metadata"
-  name      = "lb-https-tf"
+  name      = var.xc_loadbalancer
   //Name of the namespace where the origin pool must be deployed
-  namespace = "VOLTERRA_NS"
+  namespace = var.xc_namespace
   //End of mandatory "Metadata" 
   //Mandatory "Basic configuration" with Auto-Cert 
-  domains = ["mypublic.appfqdn.com"]
+  domains = [var.xc_fqdn_app]
   https_auto_cert {
     add_hsts = true
     http_redirect = true
@@ -68,8 +69,8 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
   }
   default_route_pools {
       pool {
-        name = "op-public-fqdn"
-        namespace = "VOLTERRA_NS"
+        name = var.xc_origin_pool
+        namespace = var.xc_namespace
       }
       weight = 1
     }
@@ -82,8 +83,8 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
   disable_rate_limit = true
   //WAAP Policy reference, created earlier in this plan - refer to the same name
   app_firewall {
-    name = "WAAP_POLICY_TO_CREATE"
-    namespace = "VOLTERRA_NS"
+    name = var.xc_wafpol_name
+    namespace = var.xc_namespace
   }
   multi_lb_app = true
   user_id_client_ip = true
