@@ -11,9 +11,9 @@ Have a Volterra API Certificate. Please see this page for the API Certificate ge
 
 Than "export" the env variables accordingly:
 ```
-> export VES_P12_PASSWORD=<P12_cert_password>
-> export VOLT_API_URL=https://<F5_Distrubuted_Cloud_URL>/api
-> export VOLT_API_P12_FILE=/path/to/the/p12/file_api-creds.p12
+export VES_P12_PASSWORD=<P12_cert_password>
+export VOLT_API_URL=https://<F5_Distrubuted_Cloud_URL>/api
+export VOLT_API_P12_FILE=/path/to/the/p12/file_api-creds.p12
 ```
 
 ## Quick Demo
