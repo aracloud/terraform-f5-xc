@@ -9,3 +9,5 @@ docs/errors.txt
 .terraform/
 HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_new_WAAP/.terraform/
 HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_new_WAAP/terraform*
+HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_new_WAAP_BotDefense/.terraform/
+HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_new_WAAP_BotDefense/terraform*
