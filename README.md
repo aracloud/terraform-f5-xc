@@ -1,4 +1,4 @@
-# Terraform plan examples for Volterra
+# Terraform plan examples for F5 Distributed Cloud
 
 ## Overview
 In this repository, you will find Terraform plan examples for Volterra deployments.
@@ -9,7 +9,7 @@ The Volterra modules are available here : https://registry.terraform.io/provider
 ## Pre-Requirements
 Have a Volterra API Certificate. Please see this page for the API Certificate generation: https://volterra.io/docs/how-to/user-mgmt/credentials
 
-Than "export" the env variables accordingly:
+Than "export" the env variables accordingly to authenticate via terraform:
 ```
 export VES_P12_PASSWORD=<P12_cert_password>
 export VOLT_API_URL=https://<F5_Distrubuted_Cloud_URL>/api
