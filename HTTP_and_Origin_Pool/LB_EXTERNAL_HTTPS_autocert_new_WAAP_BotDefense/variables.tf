@@ -23,20 +23,20 @@ variable "xc_namespace" {
 // pool name
 variable "xc_origin_pool" {
   type = string
-  default = "op-ip-internal"
+  default = "op-ip-internal-bot"
 }
 
 // loadbalancer
 variable "xc_loadbalancer" {
   type = string
-  default = "lb-https-tf-ara"
+  default = "lb-https-tf-ara-bot"
 }
 
 // backend application
 variable "xc_pub_app" {
   type = string
-  //default = "sentence.emea.f5se.com"
-  default = "app.ndee.me"
+  default = "sentence.emea.f5se.com"
+  //default = "app.ndee.me"
 }
 
 variable "xc_pub_app_port" {
@@ -52,11 +52,11 @@ variable "xc_pub_app_no_tls" {
 // waf policy 
 variable "xc_wafpol_name" {
   type = string
-  default = "waap-demo-tf-ara"
+  default = "waap-demo-tf-ara-bot"
 }
 
 // application full qualified domain name
 variable "xc_fqdn_app" {
   type = string
-  default = "araweb.emea-ent.f5demos.com"
+  default = "arabot.emea-ent.f5demos.com"
 }
