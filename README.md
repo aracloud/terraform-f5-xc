@@ -6,9 +6,6 @@ In this repository, you will find Terraform plan examples for Volterra deploymen
 ## Getting Started
 The Volterra modules are available here : https://registry.terraform.io/providers/volterraedge/volterra/latest
 
-![alt text][logo]
-
-[logo]: https://raw.githubusercontent.com/f5devcentral/terraform-volterra/main/terraform_screen.png "Terraform"
 
 ## Quick Demo
 
@@ -17,10 +14,8 @@ The Volterra modules are available here : https://registry.terraform.io/provider
 ## Pre-Requirements
 Have a Volterra API Certificate. Please see this page for the API Certificate generation: https://volterra.io/docs/how-to/user-mgmt/credentials
 
-Extract the certificate and the key from the .p12:
+Than "export" the env variables accordingly:
 
-```
-    openssl pkcs12 -info -in certificate.p12 -out private_key.key -nodes -nocerts
-    openssl pkcs12 -info -in certificate.p12 -out certificate.cert -nokeys
-```
-
+export VES_P12_PASSWORD=<P12_cert_password>
+export VOLT_API_URL=https://<F5_Distrubuted_Cloud_URL>/api
+export VOLT_API_P12_FILE=/export/gitrepo/terraform-volterra/api-key/api-creds.p12
