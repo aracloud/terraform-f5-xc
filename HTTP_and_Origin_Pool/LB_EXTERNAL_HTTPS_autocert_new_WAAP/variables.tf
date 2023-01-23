@@ -29,7 +29,7 @@ variable "xc_origin_pool" {
 // loadbalancer
 variable "xc_loadbalancer" {
   type = string
-  default = "lb-https-tf-demo"
+  default = "lb-https-tf-demoweb"
 }
 
 // backend application
@@ -52,7 +52,7 @@ variable "xc_pub_app_no_tls" {
 // waf policy 
 variable "xc_wafpol_name" {
   type = string
-  default = "waap-demo-tf-demo"
+  default = "waap-tf-demoweb"
 }
 
 // application full qualified domain name
