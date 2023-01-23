@@ -23,13 +23,13 @@ variable "xc_namespace" {
 // pool name
 variable "xc_origin_pool" {
   type = string
-  default = "op-ip-internal"
+  default = "op-ip-int"
 }
 
 // loadbalancer
 variable "xc_loadbalancer" {
   type = string
-  default = "lb-https-tf-ara"
+  default = "lb-https-tf-demo"
 }
 
 // backend application
@@ -52,11 +52,11 @@ variable "xc_pub_app_no_tls" {
 // waf policy 
 variable "xc_wafpol_name" {
   type = string
-  default = "waap-demo-tf-ara"
+  default = "waap-demo-tf-demo"
 }
 
 // application full qualified domain name
 variable "xc_fqdn_app" {
   type = string
-  default = "araweb.emea-ent.f5demos.com"
+  default = "demoweb.emea-ent.f5demos.com"
 }
