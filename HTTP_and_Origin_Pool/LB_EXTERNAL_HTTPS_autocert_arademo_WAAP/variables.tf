@@ -29,7 +29,7 @@ variable "xc_origin_pool" {
 // loadbalancer
 variable "xc_loadbalancer" {
   type = string
-  default = "lb-https-tf-demoweb"
+  default = "lb-https-tf-arademo"
 }
 
 // backend application
@@ -58,5 +58,5 @@ variable "xc_wafpol_name" {
 // application full qualified domain name
 variable "xc_fqdn_app" {
   type = string
-  default = "demoweb.emea-ent.f5demos.com"
+  default = "arademo.emea-ent.f5demos.com"
 }
