@@ -23,7 +23,7 @@ variable "xc_namespace" {
 // pool name
 variable "xc_origin_pool" {
   type = string
-  default = "op-ip-int"
+  default = "op-ip-arademo"
 }
 
 // loadbalancer

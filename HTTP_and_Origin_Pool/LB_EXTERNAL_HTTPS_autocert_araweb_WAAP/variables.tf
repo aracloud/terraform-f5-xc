@@ -23,13 +23,13 @@ variable "xc_namespace" {
 // pool name
 variable "xc_origin_pool" {
   type = string
-  default = "op-ip-ara"
+  default = "op-ip-araweb"
 }
 
 // loadbalancer
 variable "xc_loadbalancer" {
   type = string
-  default = "lb-https-tf-ara"
+  default = "lb-https-tf-araweb"
 }
 
 // backend application
@@ -52,7 +52,7 @@ variable "xc_pub_app_no_tls" {
 // waf policy 
 variable "xc_wafpol_name" {
   type = string
-  default = "waap-demo-tf-ara"
+  default = "waap-tf-araweb"
 }
 
 // application full qualified domain name
