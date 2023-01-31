@@ -52,7 +52,7 @@ variable "xc_pub_app_no_tls" {
 // waf policy 
 variable "xc_wafpol_name" {
   type = string
-  default = "waap-tf-demoweb"
+  default = "waap-tf-arademo"
 }
 
 // application full qualified domain name
