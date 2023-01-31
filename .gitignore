@@ -7,9 +7,9 @@ docs/errors.txt
 .vscode
 .terraform*
 .terraform/
-HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_new_WAAP/.terraform/
-HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_new_WAAP/terraform*
-HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_ara_WAAP/.terraform/
-HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_ara_WAAP/terraform*
+HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_araweb_WAAP/.terraform/
+HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_araweb_WAAP/terraform*
+HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_arademo_WAAP/.terraform/
+HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_arademo_WAAP/terraform*
 HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_new_WAAP_BotDefense/.terraform/
 HTTP_and_Origin_Pool/LB_EXTERNAL_HTTPS_autocert_new_WAAP_BotDefense/terraform*
