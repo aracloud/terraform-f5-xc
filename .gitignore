@@ -1,10 +1,11 @@
+# api token directory
 api-key/
-.idea/
-docs/_build/
-_build/
-docs/errors.txt
+
+# some defaults
 .DS_Store
 .vscode
+
+# terraform files
 .terraform*
 .terraform/
 **/.terraform*
