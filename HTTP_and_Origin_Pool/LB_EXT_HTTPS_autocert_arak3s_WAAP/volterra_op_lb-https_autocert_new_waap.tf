@@ -12,13 +12,12 @@ resource "volterra_origin_pool" "xc_origin_pool" {
       service_name = var.xc_k3s_svc
       site_locator {
         site {
-          tenant = f5-emea-ent-bceuutam
-          namespace = system
-          name = site-local-ara
-          kind = site
+          tenant = "f5-emea-ent-bceuutam"
+          namespace = "system"
+          name = "site-local-ara"
         }
       }
-      outside_network = {}
+      outside_network = true
     }
 
     labels = {}
