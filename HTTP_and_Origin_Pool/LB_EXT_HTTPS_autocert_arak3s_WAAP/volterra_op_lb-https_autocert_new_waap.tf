@@ -24,7 +24,8 @@ resource "volterra_origin_pool" "xc_origin_pool" {
   }
 
   no_tls = var.xc_pub_app_no_tls
-  port = var.xc_pub_app_port
+  automatic_port = true
+  same_as_endpoint_port = true
 
   endpoint_selection     = "LOCALPREFERED"
   loadbalancer_algorithm = "LB_OVERRIDE"
