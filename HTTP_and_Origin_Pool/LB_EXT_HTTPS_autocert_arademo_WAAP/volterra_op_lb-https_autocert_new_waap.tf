@@ -38,8 +38,6 @@ resource "volterra_healthcheck" "hc-example" {
     // One of the arguments from this list "use_origin_server_name host_header" must be set
     use_origin_server_name = true
     path                   = "/"
-
-    request_headers_to_remove = ["user-agent"]
     use_http2                 = false
   }
   healthy_threshold   = 3
