@@ -25,8 +25,8 @@ resource "volterra_origin_pool" "xc_origin_pool" {
 }
 
 //Definition of the healthcheck
-resource "volterra_healthcheck" "xc_healtcheck_web" {
-  name      = var.xc_healtcheck_web
+resource "volterra_healthcheck" "xc_healthcheck_web" {
+  name      = var.xc_healthcheck_web
   namespace = var.xc_namespace 
 
   // One of the arguments from this list "dns_proxy_icmp_health_check http_health_check tcp_health_check dns_proxy_tcp_health_check dns_proxy_udp_health_check dns_health_check" must be set

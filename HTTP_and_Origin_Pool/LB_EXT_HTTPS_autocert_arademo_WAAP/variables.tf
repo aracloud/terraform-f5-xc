@@ -29,7 +29,7 @@ variable "xc_pub_app_port" {
   default = "80"
 }
 
-variable "xc_healtcheck_web" {
+variable "xc_healthcheck_web" {
   type = string
   default = "health-tf-web-arademo"
 }
