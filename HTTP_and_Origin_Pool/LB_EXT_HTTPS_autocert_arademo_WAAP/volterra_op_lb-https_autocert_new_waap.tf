@@ -31,10 +31,6 @@ resource "volterra_healthcheck" "hc-example" {
   http_health_check {
     expected_status_codes = ["200"]
 
-    headers = {
-      "key1" = "value1"
-    }
-
     // One of the arguments from this list "use_origin_server_name host_header" must be set
     use_origin_server_name = true
     path                   = "/"
