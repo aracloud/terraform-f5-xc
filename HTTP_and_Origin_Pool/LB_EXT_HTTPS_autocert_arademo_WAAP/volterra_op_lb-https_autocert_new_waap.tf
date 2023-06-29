@@ -37,8 +37,9 @@ resource "volterra_healthcheck" "xc_healtcheck_web" {
     // One of the arguments from this list "use_origin_server_name host_header" must be set
     use_origin_server_name = true
     path                   = "/"
-    use_http2                 = false
+    use_http2              = false
   }
+
   healthy_threshold   = 3
   interval            = 15
   timeout             = 3
@@ -91,7 +92,7 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
         namespace = var.xc_namespace
       }
       weight = 1
-    }
+  }
   //Mandatory "VIP configuration"
   advertise_on_public_default_vip = true
   //End of mandatory "VIP configuration"
