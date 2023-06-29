@@ -11,3 +11,5 @@ api-key/
 **/.terraform*
 **/.terraform/
 **/terraform.tfstate*
+
+kssg/
