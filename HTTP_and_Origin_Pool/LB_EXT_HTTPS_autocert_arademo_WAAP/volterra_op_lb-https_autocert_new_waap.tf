@@ -29,7 +29,7 @@ resource "volterra_healthcheck" "hc-example" {
   // One of the arguments from this list "dns_proxy_icmp_health_check http_health_check tcp_health_check dns_proxy_tcp_health_check dns_proxy_udp_health_check dns_health_check" must be set
 
   http_health_check {
-    expected_status_codes = ["200-250"]
+    expected_status_codes = ["200"]
 
     headers = {
       "key1" = "value1"
