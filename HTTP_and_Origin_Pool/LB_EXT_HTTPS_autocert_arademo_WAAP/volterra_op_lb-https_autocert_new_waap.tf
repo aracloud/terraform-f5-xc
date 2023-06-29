@@ -21,6 +21,33 @@ resource "volterra_origin_pool" "xc_origin_pool" {
   loadbalancer_algorithm = "LB_OVERRIDE"
 }
 
+//Definition of the healthcheck
+resource "volterra_healthcheck" "hc-example" {
+  name      = "health-tf-web"
+  namespace = "default"
+
+  // One of the arguments from this list "dns_proxy_icmp_health_check http_health_check tcp_health_check dns_proxy_tcp_health_check dns_proxy_udp_health_check dns_health_check" must be set
+
+  http_health_check {
+    expected_status_codes = ["200-250"]
+
+    headers = {
+      "key1" = "value1"
+    }
+
+    // One of the arguments from this list "use_origin_server_name host_header" must be set
+    use_origin_server_name = true
+    path                   = "/"
+
+    request_headers_to_remove = ["user-agent"]
+    use_http2                 = true
+  }
+  healthy_threshold   = ["2"]
+  interval            = ["10"]
+  timeout             = ["1"]
+  unhealthy_threshold = ["5"]
+}
+
 //Definition of the WAAP Policy
 resource "volterra_app_firewall" "waap-tf" {
   name      = var.xc_wafpol_name
