@@ -40,8 +40,12 @@ resource "volterra_healthcheck" "hc-example" {
     path                   = "/"
 
     request_headers_to_remove = ["user-agent"]
-    use_http2                 = true
+    use_http2                 = false
   }
+  healthy_threshold   = 3
+  interval            = 15
+  timeout             = 3
+  unhealthy_threshold = 1
 }
 
 //Definition of the WAAP Policy
