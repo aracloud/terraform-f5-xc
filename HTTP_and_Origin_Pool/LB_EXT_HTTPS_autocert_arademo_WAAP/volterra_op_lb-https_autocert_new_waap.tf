@@ -22,7 +22,7 @@ resource "volterra_origin_pool" "xc_origin_pool" {
 }
 
 //Definition of the healthcheck
-resource "volterra_healthcheck" "hc-example" {
+resource "volterra_healthcheck" "xc_healtcheck_web" {
   name      = "health-tf-web"
   namespace = var.xc_namespace 
 
