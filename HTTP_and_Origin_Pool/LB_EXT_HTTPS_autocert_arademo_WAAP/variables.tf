@@ -29,6 +29,11 @@ variable "xc_pub_app_port" {
   default = "80"
 }
 
+variable "xc_healtcheck_web" {
+  type = string
+  default = "health-tf-web-ara"
+}
+
 variable "xc_pub_app_no_tls" {
   type = string
   default = "true"
