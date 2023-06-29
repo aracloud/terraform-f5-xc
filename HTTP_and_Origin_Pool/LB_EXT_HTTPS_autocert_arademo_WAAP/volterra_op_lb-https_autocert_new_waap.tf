@@ -1,6 +1,4 @@
-//==========================================================================
-//Definition of the Origin, 1-origin.tf
-//Start of the TF file
+//Definition of the Origin Pool
 resource "volterra_origin_pool" "xc_origin_pool" {
   name                   = var.xc_origin_pool
   //Name of the namespace where the origin pool must be deployed
@@ -22,8 +20,6 @@ resource "volterra_origin_pool" "xc_origin_pool" {
   endpoint_selection     = "LOCALPREFERED"
   loadbalancer_algorithm = "LB_OVERRIDE"
 }
-//End of the file
-//==========================================================================
 
 //Definition of the WAAP Policy
 resource "volterra_app_firewall" "waap-tf" {
@@ -46,9 +42,7 @@ resource "volterra_app_firewall" "waap-tf" {
   blocking = true
 }
 
-//==========================================================================
-//Definition of the Load-Balancer, 2-https-lb.tf
-//Start of the TF file
+//Definition of the Load-Balancer
 resource "volterra_http_loadbalancer" "lb-https-tf" {
   depends_on = [volterra_origin_pool.xc_origin_pool]
   //Mandatory "Metadata"
@@ -94,6 +88,3 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
   //End of mandatory "Load Balancing Control"
   
 }
-
-//End of the file
-//==========================================================================
