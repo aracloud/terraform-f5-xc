@@ -1,8 +1,7 @@
 //Definition of the Origin Pool
 resource "volterra_origin_pool" "xc_origin_pool" {
-  name                   = var.xc_origin_pool
-  //Name of the namespace where the origin pool must be deployed
-  namespace              = var.xc_namespace
+  name      = var.xc_origin_pool
+  namespace = var.xc_namespace
  
    origin_servers {
 
@@ -19,6 +18,10 @@ resource "volterra_origin_pool" "xc_origin_pool" {
 
   endpoint_selection     = "LOCALPREFERED"
   loadbalancer_algorithm = "LB_OVERRIDE"
+  healthcheck {
+    name = var.xc_healthcheck_web
+    namespace = var.xc_namespace
+  }
 }
 
 //Definition of the healthcheck
