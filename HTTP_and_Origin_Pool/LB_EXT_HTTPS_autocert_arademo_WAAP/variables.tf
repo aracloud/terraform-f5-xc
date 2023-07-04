@@ -48,5 +48,5 @@ variable "xc_wafpol_name" {
 // application full qualified domain name
 variable "xc_fqdn_app" {
   type = string
-  default = "arademo.emea-ent.f5demos.com"
+  default = "arademo.xcemea.f5demo.ch"
 }
