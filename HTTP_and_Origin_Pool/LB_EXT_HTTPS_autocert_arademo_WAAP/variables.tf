@@ -21,7 +21,7 @@ variable "xc_loadbalancer" {
 // backend application
 variable "xc_pub_app" {
   type = string
-  default = "sentence.emea.f5se.com"
+  default = "demo-app.amer.myedgedemo.com"
 }
 
 variable "xc_pub_app_port" {
