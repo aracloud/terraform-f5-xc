@@ -46,3 +46,9 @@ variable "xc_fqdn_app" {
   type = string
   default = "www3.xcemea.f5demo.ch"
 }
+
+// tsl cert
+variable "xc_tls_cert" {
+  type = string
+  default = "www3-f5demo-ch"
+}

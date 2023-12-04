@@ -58,14 +58,33 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
   //End of mandatory "Metadata" 
   //Mandatory "Basic configuration" with Auto-Cert 
   domains = [var.xc_fqdn_app]
-  https_auto_cert {
+  https {
     add_hsts = true
+    non_default_loadbalancer = true
     http_redirect = true
-    no_mtls = true
     enable_path_normalize = true
-    tls_config {
+    port = 443
+
+    tls_parameters {
+      // One of the arguments from this list "no_mtls use_mtls" must be set
+      no_mtls = true
+
+      tls_config {
+        // One of the arguments from this list "default_security medium_security low_security custom_security" must be set
         default_security = true
       }
+      tls_certificates {
+        certificate_url = "string:///<base64 encoding of the TLS certificate public key"
+        private_key {
+          blindfold_secret_info {
+             decryption_provider = ""
+             store_provider = ""
+             location = "string:///<blinfolded private key of the TLS certificate>"
+          }
+          secret_encoding_type = "EncodingNone"
+        }
+      }
+    }
   }
   default_route_pools {
       pool {
