@@ -58,7 +58,7 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
   //End of mandatory "Metadata" 
   //Mandatory "Basic configuration" with Auto-Cert 
   domains = [var.xc_fqdn_app]
-  https_auto_cert {
+  https {
     add_hsts = true
     http_redirect = true
     no_mtls = true
