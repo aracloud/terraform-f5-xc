@@ -17,7 +17,7 @@ export VOLT_API_URL=https://<F5_Distrubuted_Cloud_URL>/api
 export VOLT_API_P12_FILE=/path/to/the/p12/file_api-creds.p12
 ```
 
-## Quick Demo (how to)
+## Quick example demo (how to)
 
 [![Alt text](https://img.youtube.com/vi/M2TGAFAbsSc/0.jpg)](https://www.youtube.com/watch?v=M2TGAFAbsSc)
 
