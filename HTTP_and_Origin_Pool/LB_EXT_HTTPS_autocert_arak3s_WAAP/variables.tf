@@ -1,5 +1,11 @@
 // definition of all needed objects in F5XC
 
+// tenant
+variable "xc_tenant" {
+  type = string
+  default = "f5-emea-ent-bceuutam"
+}
+
 // namespace
 variable "xc_namespace" {
   type = string
