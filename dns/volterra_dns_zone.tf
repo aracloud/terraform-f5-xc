@@ -7,7 +7,7 @@ resource "volterra_dns_zone" "dns-zone" {
   primary {
 
     default_rr_set_group {
-      ttl = "3600"
+      ttl = var.xc_ns_record_ttl
       ns_record {
         name = var.xc_dns_subdomain
         values = [
@@ -30,7 +30,7 @@ resource "volterra_dns_zone" "dns-zone" {
       }
 
       rr_set {
-        ttl = "300"
+        ttl = var.xc_a_record_ttl
         // One of the arguments from this list "alias_record cname_record mx_record naptr_record aaaa_record srv_record lb_record loc_record sshfp_record cert_record dlv_record caa_record ptr_record txt_record cds_record eui48_record eui64_record tlsa_record a_record ns_record ds_record afsdb_record" must be set
         a_record {
           name = var.xc_a_record_name

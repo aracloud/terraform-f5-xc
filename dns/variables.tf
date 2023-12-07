@@ -53,3 +53,15 @@ variable "xc_a_record_ip" {
   type = string
   default = "72.19.3.187"
 }
+
+// ttl a-record
+variable "xc_a_record_ttl" {
+  type = string
+  default = "300"
+}
+
+// ttl ns-record
+variable "xc_ns_record_ttl" {
+  type = string
+  default = "3600"
+}
