@@ -24,9 +24,9 @@ resource "volterra_dns_zone" "example" {
 
     rr_set_group {
       metadata {
-        description = "Virtual Host for acmecorp website"
+        description = "Virtual Host for f5demo website"
         disable     = true
-        name        = "acmecorp-web"
+        name        = "f5demo-web"
       }
 
       rr_set {
