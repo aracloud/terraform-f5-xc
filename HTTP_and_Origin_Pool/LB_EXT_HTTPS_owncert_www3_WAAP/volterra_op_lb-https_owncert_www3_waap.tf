@@ -65,24 +65,19 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
     enable_path_normalize = true
     port = 443
 
-    tls_parameters {
+    tls_cert_params {
+      certificates {
+        name      = var.xc_tls_cert
+        namespace = var.xc_namespace
+        tenant    = var.xc_tenant
+      }
+
       // One of the arguments from this list "no_mtls use_mtls" must be set
       no_mtls = true
 
       tls_config {
         // One of the arguments from this list "default_security medium_security low_security custom_security" must be set
         default_security = true
-      }
-      tls_certificates {
-        certificate_url = "string:///<base64 encoding of the TLS certificate public key"
-        private_key {
-          blindfold_secret_info {
-             decryption_provider = ""
-             store_provider = ""
-             location = "string:///<blinfolded private key of the TLS certificate>"
-          }
-          secret_encoding_type = "EncodingNone"
-        }
       }
     }
   }
