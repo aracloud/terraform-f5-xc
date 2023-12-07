@@ -1,5 +1,5 @@
-resource "volterra_dns_zone" "example" {
-  name      = "acmecorp-web"
+resource "volterra_dns_zone" "dns-zone" {
+  name      = var.xc_dns_zone
   namespace = var.xc_namespace_system
 
   // One of the arguments from this list "primary secondary" must be set
