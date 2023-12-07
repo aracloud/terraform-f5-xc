@@ -5,10 +5,10 @@ resource "volterra_dns_zone" "example" {
   // One of the arguments from this list "primary secondary" must be set
 
   primary {
-    allow_http_lb_managed_records = true
 
+    allow_http_lb_managed_records = true
+    
     default_rr_set_group {
-      description = "Comment"
       ttl         = "3600"
 
       // One of the arguments from this list "a_record ns_record ds_record afsdb_record alias_record cname_record mx_record naptr_record sshfp_record cert_record dlv_record aaaa_record srv_record lb_record loc_record eui48_record eui64_record tlsa_record caa_record ptr_record txt_record cds_record" must be set
@@ -32,7 +32,6 @@ resource "volterra_dns_zone" "example" {
       }
 
       rr_set {
-        description = "Comment"
         ttl         = "3600"
 
         // One of the arguments from this list "alias_record cname_record mx_record naptr_record aaaa_record srv_record lb_record loc_record sshfp_record cert_record dlv_record caa_record ptr_record txt_record cds_record eui48_record eui64_record tlsa_record a_record ns_record ds_record afsdb_record" must be set
