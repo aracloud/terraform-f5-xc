@@ -5,6 +5,7 @@ variable "xc_tenant" {
   type = string
   default = "f5-emea-ent-bceuutam"
 }
+
 // namespace
 variable "xc_namespace" {
   type = string
@@ -47,9 +48,15 @@ variable "xc_wafpol_name" {
 }
 
 // application full qualified domain name
-variable "xc_fqdn_app" {
+variable "xc_fqdn_app_sub" {
   type = string
   default = "www3.xcemea.f5demo.ch"
+}
+
+// application full qualified domain name
+variable "xc_fqdn_app_top" {
+  type = string
+  default = "www3.f5demo.ch"
 }
 
 // tsl cert
