@@ -35,7 +35,7 @@ resource "volterra_dns_zone" "example" {
         a_record {
           name = var.xc_a_record_name
           values = [
-            var.var.xc_a_record_ip
+            var.xc_a_record_ip
           ]
         }
       }
