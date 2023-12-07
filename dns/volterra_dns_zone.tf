@@ -1,21 +1,19 @@
 resource "volterra_dns_zone" "example" {
   name      = "acmecorp-web"
-  namespace = "staging"
+  namespace = var.xc_namespace_system
 
   // One of the arguments from this list "primary secondary" must be set
 
   primary {
 
-    allow_http_lb_managed_records = true
-    
     default_rr_set_group {
-      ttl         = "3600"
-
-      // One of the arguments from this list "a_record ns_record ds_record afsdb_record alias_record cname_record mx_record naptr_record sshfp_record cert_record dlv_record aaaa_record srv_record lb_record loc_record eui48_record eui64_record tlsa_record caa_record ptr_record txt_record cds_record" must be set
-
-      cname_record {
-        name  = "www or mail or * or corp.web or *.b"
-        value = "example.com"
+      ttl = "3600"
+      ns_record {
+        name = var.xc_dns_subdomain
+        values = [
+          var.xc_dns_zone_ns1,
+          var.xc_dns_zone_ns2
+        ]
       }
     }
 
@@ -32,13 +30,13 @@ resource "volterra_dns_zone" "example" {
       }
 
       rr_set {
-        ttl         = "3600"
-
+        ttl = "300"
         // One of the arguments from this list "alias_record cname_record mx_record naptr_record aaaa_record srv_record lb_record loc_record sshfp_record cert_record dlv_record caa_record ptr_record txt_record cds_record eui48_record eui64_record tlsa_record a_record ns_record ds_record afsdb_record" must be set
-
-        eui64_record {
-          name  = "www or mail or * or ww* or *ab"
-          value = "01-23-45-67-89-ab-cd-ef"
+        a_record {
+          name = var.xc_a_record_name
+          values = [
+            var.var.xc_a_record_ip
+          ]
         }
       }
     }

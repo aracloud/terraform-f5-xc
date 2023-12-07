@@ -18,14 +18,38 @@ variable "xc_namespace_system" {
   default = "system"
 }
 
-// application full qualified domain name
-variable "xc_fqdn_app_sub" {
+// dns zone
+variable "xc_dns_zone" {
   type = string
-  default = "www3.xcemea.f5demo.ch"
+  default = "xctest.f5demo.ch"
 }
 
-// application full qualified domain name
-variable "xc_fqdn_app_top" {
+// dns zone
+variable "xc_dns_zone_ns1" {
   type = string
-  default = "www3.f5demo.ch"
+  default = "ns1.f5clouddns.com"
+}
+
+// dns zone
+variable "xc_dns_zone_ns2" {
+  type = string
+  default = "ns2.f5clouddns.com"
+}
+
+// dns subdomain
+variable "xc_dns_subdomain" {
+  type = string
+  default = "xctest"
+}
+
+// a-record
+variable "xc_a_record_name" {
+  type = string
+  default = "www3"
+}
+
+// a-record
+variable "xc_a_record_ip" {
+  type = string
+  default = "72.19.3.187"
 }
