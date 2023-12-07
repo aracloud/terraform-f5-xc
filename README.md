@@ -1,4 +1,4 @@
-# Terraform plan examples for F5 Distributed Cloud
+# Terraform examples for F5 XC
 
 ## Overview
 In this repository, you will find Terraform plan examples for F5 Distributed Cloud deployments.
