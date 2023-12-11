@@ -2,6 +2,6 @@
 
 In this section, you will find several Terraform plan examples to create DNS definitions.
 
-## Terraform Plans for DNS definition
+## Variables.tf configuration
 
 Define all the variables and push the zone definitions.
