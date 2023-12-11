@@ -3,13 +3,13 @@
 // tenant
 variable "xc_tenant" {
   type = string
-  default = "f5-channel-rwtqhrvn"
+  default = "<tenant-id>"
 }
 
 // namespace
 variable "xc_namespace_user" {
   type = string
-  default = "a-arquint"
+  default = "<user_namespace>"
 }
 
 // namespace system (tenant wide)
@@ -18,40 +18,40 @@ variable "xc_namespace_system" {
   default = "system"
 }
 
-// dns zone
+// dns zone or subzone (delegation)
 variable "xc_dns_zone" {
   type = string
-  default = "xcchannel.f5demo.ch"
+  default = "<dns_zone>"
 }
 
 // dns zone
 variable "xc_dns_zone_ns1" {
   type = string
-  default = "ns1.f5clouddns.com"
+  default = "<ns1>"
 }
 
 // dns zone
 variable "xc_dns_zone_ns2" {
   type = string
-  default = "ns2.f5clouddns.com"
+  default = "<ns2>"
 }
 
-// dns subdomain
+// dns subdomain (if needed)
 variable "xc_dns_subdomain" {
   type = string
-  default = "xcchannel"
+  default = "<subdomain>"
 }
 
 // a-record
 variable "xc_a_record_name" {
   type = string
-  default = "www3"
+  default = "<name>"
 }
 
 // a-record
 variable "xc_a_record_ip" {
   type = string
-  default = "185.56.152.98"
+  default = "<tenant_ip>"
 }
 
 // ttl a-record

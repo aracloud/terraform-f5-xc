@@ -24,9 +24,9 @@ resource "volterra_dns_zone" "dns-zone" {
 
     rr_set_group {
       metadata {
-        description = "Virtual Host for f5demo website"
+        description = "Virtual Host for demo website"
         disable     = true
-        name        = "f5demo-web"
+        name        = "demo-web"
       }
 
       rr_set {
