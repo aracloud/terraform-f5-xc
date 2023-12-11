@@ -3,7 +3,7 @@
 // tenant
 variable "xc_tenant" {
   type = string
-  default = "f5-emea-ent-bceuutam"
+  default = "f5-channel-rwtqhrvn"
 }
 
 // namespace
@@ -21,7 +21,7 @@ variable "xc_namespace_system" {
 // dns zone
 variable "xc_dns_zone" {
   type = string
-  default = "xctest.f5demo.ch"
+  default = "xcchannel.f5demo.ch"
 }
 
 // dns zone
@@ -39,7 +39,7 @@ variable "xc_dns_zone_ns2" {
 // dns subdomain
 variable "xc_dns_subdomain" {
   type = string
-  default = "xctest"
+  default = "xcchannel"
 }
 
 // a-record
@@ -51,7 +51,7 @@ variable "xc_a_record_name" {
 // a-record
 variable "xc_a_record_ip" {
   type = string
-  default = "72.19.3.187"
+  default = "185.56.152.98"
 }
 
 // ttl a-record
@@ -63,5 +63,5 @@ variable "xc_a_record_ttl" {
 // ttl ns-record
 variable "xc_ns_record_ttl" {
   type = string
-  default = "3600"
+  default = "10800"
 }
