@@ -3,7 +3,7 @@
 .vscode
 
 # dirs
-/exclude/
+/exclude/*
 
 # terraform files
 .terraform*
