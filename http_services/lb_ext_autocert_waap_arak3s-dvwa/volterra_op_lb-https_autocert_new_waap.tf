@@ -15,7 +15,7 @@ resource "volterra_origin_pool" "xc_origin_pool" {
           tenant = var.xc_tenant
           namespace = "system"
           // manual site definition
-          name = "site-local-ara"
+          name = var.xc_tenant_site
         }
       }
       outside_network = true

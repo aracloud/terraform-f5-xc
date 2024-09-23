@@ -6,6 +6,11 @@ variable "xc_tenant" {
   default = "f5-emea-ent-bceuutam"
 }
 
+variable "xc_tenant_site" {
+  type = string
+  default = "ara-swiss-proxmox-ce1"
+}
+
 // namespace
 variable "xc_namespace" {
   type = string
@@ -21,7 +26,7 @@ variable "xc_origin_pool" {
 // loadbalancer
 variable "xc_loadbalancer" {
   type = string
-  default = "lb-https-tf-arak3s"
+  default = "lb-ara-swiss-k3s-dvwa"
 }
 
 // backend application
@@ -49,5 +54,5 @@ variable "xc_wafpol_name" {
 // application full qualified domain name
 variable "xc_fqdn_app" {
   type = string
-  default = "arak3s.emea-ent.f5demos.com"
+  default = "arak3sdvwa.emea-ent.f5demos.com"
 }
