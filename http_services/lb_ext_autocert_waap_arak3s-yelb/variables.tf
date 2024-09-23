@@ -20,19 +20,19 @@ variable "xc_namespace" {
 // pool name
 variable "xc_origin_pool" {
   type = string
-  default = "op-ip-arak3s-dvwa"
+  default = "op-ip-arak3s-yelb"
 }
 
 // loadbalancer
 variable "xc_loadbalancer" {
   type = string
-  default = "lb-ara-swiss-k3s-dvwa"
+  default = "lb-ara-swiss-k3s-yelb"
 }
 
 // backend application
 variable "xc_k3s_svc" {
   type = string
-  default = "dvwa-ui.dvwa"
+  default = "yelb-ui.yelb"
 }
 
 variable "xc_pub_app_port" {
@@ -48,11 +48,11 @@ variable "xc_pub_app_no_tls" {
 // waf policy 
 variable "xc_wafpol_name" {
   type = string
-  default = "waap-tf-arak3s-dvwa"
+  default = "waap-tf-arak3as-yelb"
 }
 
 // application full qualified domain name
 variable "xc_fqdn_app" {
   type = string
-  default = "arak3sdvwa.emea-ent.f5demos.com"
+  default = "arak3syelb.emea-ent.f5demos.com"
 }
