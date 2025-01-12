@@ -12,7 +12,7 @@ resource "volterra_origin_pool" "xc_origin_pool" {
       site_locator {
         site {
           tenant = var.xc_tenant
-          namespace = var.xc_namespace
+          namespace = "system"
           name = var.xc_tenant_site
           //kind = "site"
         }
