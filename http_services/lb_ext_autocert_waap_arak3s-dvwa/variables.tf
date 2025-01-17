@@ -8,7 +8,7 @@ variable "xc_tenant" {
 
 variable "xc_tenant_site" {
   type = string
-  default = "ara-swiss-proxmox-ce1"
+  default = "ara-swiss-ce1"
 }
 
 // namespace

@@ -41,16 +41,24 @@ resource "volterra_app_firewall" "waap-tf" {
 
   // One of the arguments from this list "allow_all_response_codes allowed_response_codes" must be set
   allow_all_response_codes = true
+
   // One of the arguments from this list "default_anonymization custom_anonymization disable_anonymization" must be set
   default_anonymization = true
+
   // One of the arguments from this list "use_default_blocking_page blocking_page" must be set
   use_default_blocking_page = true
+
+  // depreciated
   // One of the arguments from this list "default_bot_setting bot_protection_setting" must be set
-  default_bot_setting = true
+  // default_bot_setting = true
+
   // One of the arguments from this list "default_detection_settings detection_settings" must be set
   default_detection_settings = true
+
+  // depreciated
   // One of the arguments from this list "use_loadbalancer_setting blocking monitoring" must be set
-  use_loadbalancer_setting = true
+  // use_loadbalancer_setting = true
+
   // Blocking mode - optional - if not set, policy is in MONITORING
   blocking = true
 }
@@ -95,7 +103,10 @@ resource "volterra_http_loadbalancer" "lb-https-tf" {
     name = var.xc_wafpol_name
     namespace = var.xc_namespace
   }
-  multi_lb_app = true
+
+  // depreciated
+  // multi_lb_app = true
+
   user_id_client_ip = true
   //End of mandatory "Security configuration"
   //Mandatory "Load Balancing Control"
